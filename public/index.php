@@ -1,6 +1,6 @@
 <?php
 
-define(DIR, dirname(__FILE__) . '/');
+define('DIR', dirname(__FILE__) . '/');
 
 // Set course
 require_once(DIR . '../wordrelease.php');

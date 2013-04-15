@@ -9,9 +9,9 @@ $config =  array(
     // Template settings
     'tmpl'            => array(
         // File locations, relative to public/index.php
-        '_post_template' => '../template/post.php',
-        '_page_header'   => '../template/header.php',
-        '_page_footer'   => '../template/footer.php',
+        '_post_template' => '../content/template/post.php',
+        '_page_header'   => '../content/template/header.php',
+        '_page_footer'   => '../content/template/footer.php',
 
         // Default template variables.
         'site_title'       => 'My Website', // used in <head>
