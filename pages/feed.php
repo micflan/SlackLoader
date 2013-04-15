@@ -2,7 +2,7 @@
 
 // The home page displays a list of recent blog posts.
 
-$posts = json_decode(file_get_contents('../content/postmaster.json'));
+$posts = json_decode(file_get_contents(DIR . '../postmaster.json'));
 $post_count = count($posts);
 $tmpl = $wordrelease->getTemplateVars();
 
@@ -20,7 +20,7 @@ $tmpl = $wordrelease->getTemplateVars();
 //     $posts = array_slice($posts, ($pagenum-1)*$per_page, $wordrelease->config('posts_per_page'));
 // }
 
-include("../vendor/FeedWriter/FeedTypes.php");
+include(DIR . "../system/vendor/FeedWriter/FeedTypes.php");
 
 //Creating an instance of RSS2FeedWriter class.
 //The constant RSS2 is passed to mention the version
