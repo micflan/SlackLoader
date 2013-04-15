@@ -2,7 +2,7 @@
 
 // The home page displays a list of recent blog posts.
 
-if (!$posts = json_decode(file_get_contents('../content/postmaster.json'))) {
+if (!$posts = json_decode(file_get_contents(DIR . '../postmaster.json'))) {
     $posts = array();
 }
 $post_count = count($posts);
@@ -53,6 +53,6 @@ if ($per_page = $wordrelease->config('posts_per_page')) {
 foreach($posts AS $row) {
     if ($post = $wordrelease->getArticle($row->uid)) {
         $data = $post['data'];
-        include($tmpl['_post_template']);
+        include(DIR . $tmpl['_post_template']);
     }
 }

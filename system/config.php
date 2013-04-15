@@ -1,7 +1,7 @@
 <?php
 
 $config =  array(
-    'posts_dir'         => '../content/posts/', // The location of the post json files, relative to public/index..php
+    'posts_dir'         => '../posts/', // The location of the post json files, relative to public/index..php
     'posts_url_prefix'  => '', // e.g. 'posts/' for urls like http://mywebsite.com/posts/my-article
     'posts_per_page'    => '5', // The number of posts displayed on the home page before pagination
     'pagination_prefix' => 'page/', // e.g. 'page/' for urls like http://mywebsite.com/posts/page/2

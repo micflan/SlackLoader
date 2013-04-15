@@ -1,7 +1,7 @@
 <?php
 
-require_once('config.php');
-require_once('content/pagemaster.php');
+require_once(DIR . '../system/config.php');
+require_once(DIR . '../pagemaster.php');
 
 /**
  * Wordrelease
