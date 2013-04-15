@@ -10,7 +10,7 @@
 
     <meta charset="UTF-8">
 
-    <title><?=$tmpl['page_title'];?> &mdash; <?=$tmpl['site_title'];?></title>
+    <title><?=$tmpl['page_title'];?></title>
 
     <meta name="title" content="<?=$tmpl['page_title'];?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -29,14 +29,10 @@
     <div id="header-wrap">
 
         <div class="heroWrap">
-            <h1><a href="/"><?=$tmpl['site_title'];?></a></h1>
-            <p><?=$tmpl['site_description'];?></p>
-            <p>
-                <a href="<?=$tmpl['site_address'];?>">Blog</a> &#8226; 
-                <a href="http://twitter.com/">Twitter</a> &#8226; 
-                <a href="http://github.com/">GitHub</a>
-            </p>
-            <p><a href="/about">About / Contact</a></p>
+            <h1>The infrequent blogging of <a href="/">Michael Flanagan</a></h1>
+            <p>web developer. day dreamer. intp.</p>
+            <p><a href="http://micflan.com">Blog</a> &#8226; <a href="http://twitter.com/micflan">Twitter</a> &#8226; <a href="http://github.com/micflan">GitHub</a></p>
+            <p><a href="http://michael.flanagan.ie/">About / Contact</a></p>
         </div>
 
     </div>
