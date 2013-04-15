@@ -1,0 +1,21 @@
+[
+   {
+      "uid":"my-second-post",
+      "title":"My Second Post",
+      "date":"April 15, 2013 10:04",
+      "author":"John Smith",
+      "categories":[
+         "Personal"
+      ]
+   },
+   {
+      "uid":"my-first-post",
+      "title":"My First Post",
+      "date":"April 15, 2013 10:01",
+      "author":"John Smith",
+      "categories":[
+         "Personal",
+         "Introductions"
+      ]
+   }
+]

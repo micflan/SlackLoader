@@ -1,0 +1,12 @@
+{
+    "uid":"my-second-post",
+    "content":"<p>This is the content of my second post.<\/p>",
+    "date":"April 15, 2013 10:04",
+    "author":"John Smith",
+    "title":"My Second Post",
+    "article_css":"",
+    "template_file":false,
+    "categories":[
+        "Personal"
+    ]
+}
