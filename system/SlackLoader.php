@@ -85,6 +85,7 @@ class SlackLoader
             // Get data from JSON file
             $json = file_get_contents(DIR . $this->config['posts_dir'] . $uid . '.json');
             $data = $this->cleanPage(json_decode($json, true), $uid);
+
             $data['category_text'] = implode(', ', $data['categories']);
 
             if ($tmpl === true) {
@@ -125,7 +126,7 @@ class SlackLoader
 
         $uri = empty($this->uri) ? '_' : $this->uri;
 
-        $pages = $this->cleanPages($pages);;
+        $pages = $this->cleanPages($pages);
 
         if (!empty($pages[$uri])
             and $pages[$uri]['top_level'] !== false) {
@@ -179,14 +180,10 @@ class SlackLoader
      **/
     private function cleanPage($page, $uid) {
         $complete = array (
-            '_page'            => '',
             'site_title'       => $this->tmpl['site_title'],
             'site_address'     => $this->tmpl['site_address'],
             'site_description' => $this->tmpl['site_description'],
             'site_author'      => $this->tmpl['site_author'],
-            'page_title'       => $this->tmpl['page_title'],
-            'nav_page'         => $this->tmpl['nav_page'],
-            'page_id'          => $this->tmpl['page_id'],
             'page_class'       => $this->tmpl['page_class'],
             'css'              => $this->tmpl['css'],
             'javascript'       => $this->tmpl['javascript'],
@@ -196,10 +193,10 @@ class SlackLoader
 
         $row = array_merge($complete, $page);
 
-        if (empty($row['_page'])) $row['_page'] = 'pages/' . $uid . '.php';
+        if (empty($row['_page']))      $row['_page']      = 'pages/' . $uid . '.php';
         if (empty($row['page_title'])) $row['page_title'] = ucfirst(str_replace('.', ' ', $uid));
-        if (empty($row['nav_page'])) $row['nav_page'] = ucfirst(str_replace('.', '_', $uid));
-        if (empty($row['page_id'])) $row['page_id'] = 'page' . str_replace(' ', '', ucwords(str_replace('.',' ',$uid)));
+        if (empty($row['nav_page']))   $row['nav_page']   = ucfirst(str_replace('.', '_', $uid));
+        if (empty($row['page_id']))    $row['page_id']    = 'page' . str_replace(' ', '', ucwords(str_replace('.',' ',$uid)));
 
         $row['uid'] = $uid === '_' ? '' : $uid;
         return $row;
