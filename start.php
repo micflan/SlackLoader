@@ -7,7 +7,7 @@
 $config =  array(
     'posts_dir'         => 'posts/', // The location of the post json files, relative to public/index..php
     'posts_url_prefix'  => '', // e.g. 'posts/' for urls like http://mywebsite.com/posts/my-article
-    'posts_per_page'    => '1', // The number of posts displayed on the home page before pagination
+    'posts_per_page'    => '10', // The number of posts displayed on the home page before pagination
 
     // Template settings
     'tmpl'            => array(
