@@ -38,11 +38,12 @@ $pages = array(
         'page_title'     => 'Home',
     ),
 
+    // Required for pagination. Routes trafic from /page/<num> to page/home.php.
     'page' => array(
         '_page'          => 'pages/home.php',
         'nav_page'       => 'home',
         'page_id'        => 'pageHome',
-        'pagination'     => true, // Required for pagination. Routes trafic from /page/<num> to page/home.php.
+        'pagination'     => true,
         'top_level'      => false, // this page is only used for pagination. No top-level.
     ),
 
