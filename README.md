@@ -20,3 +20,6 @@ I will build some sort of simple editor for those JSON files though. In the mean
 ## TODO:
 
 - Add editor for json files
+- Unit tests for SlackLoader.php (I know, I know, should have written tests first...)
+
+- Categories for blog posts. Maybe? Do I need these so much?
