@@ -5,16 +5,16 @@
  */
 
 $config =  array(
-    'posts_dir'         => '../posts/', // The location of the post json files, relative to public/index..php
+    'posts_dir'         => 'posts/', // The location of the post json files, relative to public/index..php
     'posts_url_prefix'  => '', // e.g. 'posts/' for urls like http://mywebsite.com/posts/my-article
     'posts_per_page'    => '10', // The number of posts displayed on the home page before pagination
 
     // Template settings
     'tmpl'            => array(
         // File locations, relative to public/index.php
-        '_post_template' => '../system/template/post.php',
-        '_page_header'   => '../system/template/header.php',
-        '_page_footer'   => '../system/template/footer.php',
+        '_post_template' => 'system/template/post.php',
+        '_page_header'   => 'system/template/header.php',
+        '_page_footer'   => 'system/template/footer.php',
 
         // Default template variables.
         'site_title'       => 'Michael Flanagan', // used in <head>
