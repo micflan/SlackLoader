@@ -47,7 +47,7 @@ $pages = array(
     ),
 
     // About page.
-    'about' => array(),
+    // 'about' => array(),
 
     // A page which generates an rss feed
     'feed' => array(

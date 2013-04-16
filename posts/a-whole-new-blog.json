@@ -1,1 +1,12 @@
-{"uid":"a-whole-new-blog","content":"I've decided to start a blog that's slightly\u00a0detached\u00a0from the rest of my online\u00a0existence.\r\n\r\nThe goal isn't to hide away or be \"anonymous\" -- and I may even tweet, link or Facebook to a post on this site in future if it suits me -- but what I want for now is a blank page to work on.\r\n\r\nI threw the blog together using <a href=\"http:\/\/wordpress.org\/\">WordPress<\/a> and the excellent <a href=\"https:\/\/github.com\/murtaugh\/HTML5-Reset-Wordpress-Theme\">HTML5 Reset Wordpress Theme<\/a>, which gives you some\u00a0minimalist, totally un-styled, HTML5 markup to start out a template with.\r\n\r\nIn terms of added style and layout, this is just about as minimal as I could possibly get things. Again, the blank page. For now this is all that's needed. I don't <em>have<\/em>\u00a0categories or archives or tags or even comments...I'm starting on empty.\r\n\r\nFill it up as she goes.","date":"March 3, 2012 01:07","title":"A Whole New Blog.","article_css":"","template_file":false,"categories":["Personal"],"author":"Michael Flanagan"}
+{
+   "uid":"a-whole-new-blog",
+   "content":"I've decided to start a blog that's slightly\u00a0detached\u00a0from the rest of my online\u00a0existence.\r\n\r\nThe goal isn't to hide away or be \"anonymous\" -- and I may even tweet, link or Facebook to a post on this site in future if it suits me -- but what I want for now is a blank page to work on.\r\n\r\nI threw the blog together using <a href=\"http:\/\/wordpress.org\/\">WordPress<\/a> and the excellent <a href=\"https:\/\/github.com\/murtaugh\/HTML5-Reset-Wordpress-Theme\">HTML5 Reset Wordpress Theme<\/a>, which gives you some\u00a0minimalist, totally un-styled, HTML5 markup to start out a template with.\r\n\r\nIn terms of added style and layout, this is just about as minimal as I could possibly get things. Again, the blank page. For now this is all that's needed. I don't <em>have<\/em>\u00a0categories or archives or tags or even comments...I'm starting on empty.\r\n\r\nFill it up as she goes.",
+   "date":"March 3, 2012 01:07",
+   "title":"A Whole New Blog.",
+   "article_css":"",
+   "template_file":false,
+   "categories":[
+      "Personal"
+   ],
+   "author":"Michael Flanagan"
+}
