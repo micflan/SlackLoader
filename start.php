@@ -1,10 +1,13 @@
 <?php
 
+/*
+ * Review these configuration and default settings and edit them to your liking.
+ */
+
 $config =  array(
     'posts_dir'         => '../posts/', // The location of the post json files, relative to public/index..php
     'posts_url_prefix'  => '', // e.g. 'posts/' for urls like http://mywebsite.com/posts/my-article
     'posts_per_page'    => '10', // The number of posts displayed on the home page before pagination
-    'pagination_prefix' => 'page/', // e.g. 'page/' for urls like http://mywebsite.com/posts/page/2
 
     // Template settings
     'tmpl'            => array(
@@ -26,3 +29,33 @@ $config =  array(
         'javascript'       => '', // appended to <body>
     )
 );
+
+
+
+
+/*
+ * NO NEED TO EDIT BELOW THIS LINE
+ */
+
+
+define('DIR', dirname(__FILE__) . '/');
+
+require_once(DIR . 'system/SlackLoader.php');
+$slack = new SlackLoader($config);
+
+
+/**
+ * Start.
+ * This loads the view.
+ *
+ * @return void
+ * @author Michael Flanagan (michael@flanagan.ie)
+ **/
+function start($slack)
+{
+    $data = $slack->getPageData();
+
+    if ($slack->getTemplateHeader()) include(DIR . $slack->getTemplateHeader());
+    include(DIR . $slack->getTemplateBody());
+    if ($slack->getTemplateFooter()) include(DIR . $slack->getTemplateFooter());
+}

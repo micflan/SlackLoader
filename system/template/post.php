@@ -1,7 +1,7 @@
 
 <article class="post-<?=$data['uid'];?> post status-publish" id="post-<?=$data['uid'];?>">
 
-    <?php if ($tmpl['nav_page'] === 'home'): ?>
+    <?php if ($data['nav_page'] === 'home'): ?>
         <h2><a href="/<?=$data['uid'];?>"><?=$data['title'];?></a></h2>
     <?php else: ?>
         <h2><?=$data['title'];?></h2>
@@ -17,7 +17,7 @@
     </div>
 
     <footer class="postmetadata">
-        <?php if ($tmpl['nav_page'] === 'home'): ?>
+        <?php if ($data['nav_page'] === 'home'): ?>
             <!-- <div class="article-link"><a href="/<?=$data['uid'];?>">Read More &amp; Comment</a></div> -->
         <?php endif; ?>
     </footer>

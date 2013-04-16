@@ -7,7 +7,7 @@
     </footer>
 
     <script>
-        <?=$tmpl['javascript'];?>
+        <?=$data['javascript'];?>
     </script>
 
     <script>

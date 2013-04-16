@@ -2,25 +2,11 @@
 
 // The home page displays a list of recent blog posts.
 
-$posts = json_decode(file_get_contents(DIR . '../postmaster.json'));
+$posts = json_decode(file_get_contents(DIR . 'postmaster.json'));
 $post_count = count($posts);
-$tmpl = $wordrelease->getTemplateVars();
+$tmpl = $slack->getTemplateVars();
 
-// Configure Pagination
-// if ($per_page = $wordrelease->config('posts_per_page')) {
-//     $last_page = (int)ceil($post_count/$per_page);
-//     $uri = $wordrelease->parseUrl();
-
-//     if (strpos($uri, str_replace('/', '.', $wordrelease->config('posts_url_prefix')) . 'page.', 0) === 0) {
-//         $pagenum = (int)array_pop(explode('.', $uri));
-//     } else {
-//         $pagenum = 1;
-//     }
-
-//     $posts = array_slice($posts, ($pagenum-1)*$per_page, $wordrelease->config('posts_per_page'));
-// }
-
-include(DIR . "../system/vendor/FeedWriter/FeedTypes.php");
+include(DIR . "system/vendor/FeedWriter/FeedTypes.php");
 
 //Creating an instance of RSS2FeedWriter class.
 //The constant RSS2 is passed to mention the version
@@ -40,7 +26,7 @@ $feed->setChannelElement('language', 'en-us');
 $feed->setChannelElement('pubDate', date(DATE_RSS, time()));
 
 foreach ($posts as $row) {
-    if ($post = $wordrelease->getArticle($row->uid)) {
+    if ($post = $slack->getArticle($row->uid)) {
         $post = $post['data'];
 
         //Create an empty FeedItem
@@ -49,13 +35,13 @@ foreach ($posts as $row) {
         //Add elements to the feed item
         //Use wrapper functions to add common feed elements
         $newItem->setTitle($post['title']);
-        $newItem->setLink($tmpl['site_address'] . $wordrelease->config('posts_url_prefix') . $post['uid']);
+        $newItem->setLink($tmpl['site_address'] . $slack->config('posts_url_prefix') . $post['uid']);
         //The parameter is a timestamp for setDate() function
         $newItem->setDate(strtotime($post['date']));
         $newItem->setDescription($post['content']);
         $newItem->addElement('author', $post['Michael Flanagan']);
         //Attributes have to passed as array in 3rd parameter
-        $newItem->addElement('guid', $tmpl['site_address'] . $wordrelease->config('posts_url_prefix') . $post['uid'], array('isPermaLink'=>'true'));
+        $newItem->addElement('guid', $tmpl['site_address'] . $slack->config('posts_url_prefix') . $post['uid'], array('isPermaLink'=>'true'));
 
         //Now add the feed item
         $feed->addItem($newItem);

@@ -10,9 +10,9 @@
 
     <meta charset="UTF-8">
 
-    <title><?=$tmpl['page_title'];?></title>
+    <title><?=$data['page_title'];?> &mdash; <?=$data['site_title'];?></title>
 
-    <meta name="title" content="<?=$tmpl['page_title'];?>">
+    <meta name="title" content="<?=$data['page_title'];?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <link rel="shortcut icon" href="favicon.ico">
@@ -20,11 +20,11 @@
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:500,600,800" type="text/css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml" title="<?=$tmpl['page_title'];?> Feed" href="/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="<?=$data['page_title'];?> Feed" href="/feed/" />
 
 </head>
 
-<body id="<?=$tmpl['page_id'];?>" class="<?=$tmpl['page_class'];?>">
+<body id="<?=$data['page_id'];?>" class="<?=$data['page_class'];?>">
 
     <div id="header-wrap">
 
