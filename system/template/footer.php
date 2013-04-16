@@ -3,11 +3,11 @@
 
     </div>
     <footer id="footer">
-        <small>&copy; <?=date('Y');?> <?=$tmpl['site_author'];?>.</small>
+        <small>&copy; <?=date('Y');?> <?=$data['site_author'];?>.</small>
     </footer>
 
     <script>
-        <?=$tmpl['javascript'];?>
+        <?=$data['javascript'];?>
     </script>
 
     <script>
