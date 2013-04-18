@@ -193,10 +193,10 @@ class SlackLoader
 
         $row = array_merge($complete, $page);
 
-        if (empty($row['_page']))      $row['_page']      = 'pages/' . $uid . '.php';
-        if (empty($row['page_title'])) $row['page_title'] = ucfirst(str_replace('.', ' ', $uid));
-        if (empty($row['nav_page']))   $row['nav_page']   = ucfirst(str_replace('.', '_', $uid));
-        if (empty($row['page_id']))    $row['page_id']    = 'page' . str_replace(' ', '', ucwords(str_replace('.',' ',$uid)));
+        if (empty($row['_page']))       $row['_page']      = 'pages/' . $uid . '.php';
+        if (!isset($row['page_title'])) $row['page_title'] = ucfirst(str_replace('.', ' ', $uid));
+        if (empty($row['nav_page']))    $row['nav_page']   = strtolower(str_replace('.', '_', $uid));
+        if (empty($row['page_id']))     $row['page_id']    = 'page' . str_replace(' ', '', ucwords(str_replace('.',' ',$uid)));
 
         $row['uid'] = $uid === '_' ? '' : $uid;
         return $row;
