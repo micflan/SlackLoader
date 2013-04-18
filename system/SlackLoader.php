@@ -111,7 +111,7 @@ class SlackLoader
                 }
             }
 
-            return array('data' => $data, 'tmpl' => $tmpl);
+            return array('data' => array_merge($this->pages['_post'], $data), 'tmpl' => $tmpl);
         }
 
         return false;
@@ -127,6 +127,7 @@ class SlackLoader
         $uri = empty($this->uri) ? '_' : $this->uri;
 
         $pages = $this->cleanPages($pages);
+        $this->pages = $pages;
 
         if (!empty($pages[$uri])
             and $pages[$uri]['top_level'] !== false) {
@@ -157,7 +158,6 @@ class SlackLoader
             $this->page_data = $pages['404'];
         }
 
-        $this->pages = $pages;
         return $this;
     }
 
@@ -189,14 +189,16 @@ class SlackLoader
             'javascript'       => $this->tmpl['javascript'],
             'top_level'        => true,
             'pagination'       => false,
+            'enable_disqus'    => $this->tmpl['enable_disqus'],
+            'disqus_shortname' => $this->tmpl['disqus_shortname'],
         );
 
         $row = array_merge($complete, $page);
 
-        if (empty($row['_page']))      $row['_page']      = 'pages/' . $uid . '.php';
-        if (empty($row['page_title'])) $row['page_title'] = ucfirst(str_replace('.', ' ', $uid));
-        if (empty($row['nav_page']))   $row['nav_page']   = ucfirst(str_replace('.', '_', $uid));
-        if (empty($row['page_id']))    $row['page_id']    = 'page' . str_replace(' ', '', ucwords(str_replace('.',' ',$uid)));
+        if (empty($row['_page']))       $row['_page']      = 'pages/' . $uid . '.php';
+        if (!isset($row['page_title'])) $row['page_title'] = ucfirst(str_replace('.', ' ', $uid));
+        if (empty($row['nav_page']))    $row['nav_page']   = strtolower(str_replace('.', '_', $uid));
+        if (empty($row['page_id']))     $row['page_id']    = 'page' . str_replace(' ', '', ucwords(str_replace('.',' ',$uid)));
 
         $row['uid'] = $uid === '_' ? '' : $uid;
         return $row;

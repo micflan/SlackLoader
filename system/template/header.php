@@ -10,7 +10,7 @@
 
     <meta charset="UTF-8">
 
-    <title><?=$data['page_title'];?> &mdash; <?=$data['site_title'];?></title>
+    <title><?=$data['page_title'] ? $data['page_title'] . ' &mdash; ' : '' ;?><?=$data['site_title'];?></title>
 
     <meta name="title" content="<?=$data['page_title'];?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
