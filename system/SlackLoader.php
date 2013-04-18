@@ -84,7 +84,8 @@ class SlackLoader
 
             // Get data from JSON file
             $json = file_get_contents(DIR . $this->config['posts_dir'] . $uid . '.json');
-            $data = $this->cleanPage(json_decode($json, true), $uid);
+            $cleanPage = $this->cleanPage(null, $uid);
+            $data = array_merge($this->pages['_post'], $cleanPage, json_decode($json, true));
 
             $data['category_text'] = implode(', ', $data['categories']);
 
@@ -111,7 +112,7 @@ class SlackLoader
                 }
             }
 
-            return array('data' => array_merge($this->pages['_post'], $data), 'tmpl' => $tmpl);
+            return array('data' => $data, 'tmpl' => $tmpl);
         }
 
         return false;
@@ -178,7 +179,7 @@ class SlackLoader
      * Fills any missing requirements
      *
      **/
-    private function cleanPage($page, $uid) {
+    private function cleanPage($page = array(), $uid) {
         $complete = array (
             'site_title'       => $this->tmpl['site_title'],
             'site_address'     => $this->tmpl['site_address'],
