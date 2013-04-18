@@ -6,20 +6,17 @@
  *
 */
 
-   $post['uid']           = "my-new-post";
-   $post['content']       = '
-This is the content of my blog post.
-
-It has <a href="http://example.com">a link</a> in it.
-';
-   $post['date']          = "April 16, 2013 09:39";
-   $post['title']         = "My New Post";
+   $post['uid']           = "podcasts-april2013";
+   $post['content']       = '<p>Podcasts I\'ve been listening to recently. Links are direct to the feeds.</p><ul><li><h3>Talk</h3><ul><li><a href="http://feeds.wnyc.org/radiolab">Radiolab</a> – very enjoyable show from New York public radio. Each episode investigates a different topic, often science related.</li><li><a href="http://downloads.bbc.co.uk/podcasts/fivelive/kermode/rss.xml">Kermode & Mayo Film Reviews</a> – weekly film news and review podcast from Mark Kermode and Simon Mayo\'s BBC 5Live radio show.</li><li><a href="http://feeds.wnyc.org/onthemedia">On The Media</a> – looking at different aspects of the media.</li></ul></li><li><h3>Tech</h3><ul><li><a href="http://feeds.feedburner.com/devhell-podcast">/dev/hell</a> – web development (with a leaning towards PHP) talking and ranting from Chris \'Grumpy Programmer\' Hartjes and Ed \'Funkatron\' Finkler.</li><li><a href="http://phptownhall.com/itunes.rss">PHP Town Hall</a> – php related talk with Phil Sturgeon and guests.</li><li><a href="http://feeds.feedburner.com/the_talk_show">The Talk Show</a> – the Daring Fireball podcast.</li></ul></li><li><h3>Tunes</h3><ul><li><a href="http://feeds.feedburner.com/kenmc">Stereo Mixtape</a> – music compiled by Ken McGuire</li><li><a href="http://feeds.feedburner.com/nialler9podcast">Nialler9</a> – music compiled by Nialler9</li></ul></li></ul>';
+   $post['date']          = "April 19, 2013 19:25";
+   $post['title']         = "Podcasts";
    $post['article_css']   = "";
    $post['template_file'] = false;
-   $post['author']        = "John Smith";
+   $post['author']        = "Michael Flanagan";
    $post['categories']    = array(
-      "Meaningful",
-      "Categories"
+      "Music",
+      "Technology",
+      "Podcasts"
    );
 
 
