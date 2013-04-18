@@ -70,18 +70,12 @@ class SlackLoader
         return $uri;
     }
 
-    public function isArticle($uid) {
+    public function isArticle($uid, $tmpl = false) {
         $prefix = str_replace('/', '.', $this->config['posts_url_prefix']);
 
         if (!empty($prefix)
-            and $tmpl['_page']
-            and substr( $uid, 0, strlen($prefix)) !== $prefix) {
-            die(DIR . $this->config['posts_dir'] . $uid . '.json');
-            if (file_exists(DIR . $this->config['posts_dir'] . $uid . '.json')) {
-                header ('HTTP/1.1 301 Moved Permanently');
-                header ('Location: '.$this->config['posts_url_prefix'].$uid);
-                exit;
-            }
+            and substr( $uid, 0, strlen($prefix)) !== $prefix
+            and $tmpl === true) {
             return false;
         }
 
@@ -94,6 +88,12 @@ class SlackLoader
         return false;
     }
 
+    public function isOldArticle($uid) {
+        $prefix = str_replace('/', '.', $this->config['posts_url_prefix']);
+        $uid = str_replace($prefix, '', $uid);
+        return (file_exists(DIR . $this->config['posts_dir'] . $uid . '.json'));
+    }
+
     /**
      * getArticle
      * retrieves json post file matching $uid
@@ -104,7 +104,7 @@ class SlackLoader
     public function getArticle ($uid, $tmpl = false) {
 
 
-        if ($this->isArticle($uid)) {
+        if ($this->isArticle($uid, $tmpl)) {
             $prefix = str_replace('/', '.', $this->config['posts_url_prefix']);
             $uid = str_replace($prefix, '', $uid);
 
@@ -167,8 +167,14 @@ class SlackLoader
         } elseif ($this->isArticle($uri)) {
 
             // Blog post
+            $this->tmpl = array_merge($this->tmpl, $pages['_post']);
             $post = $this->getArticle($uri, true);
             $this->page_data = $post['data'];
+
+        } elseif ($this->isArticle($uri)) {
+            header ('HTTP/1.1 301 Moved Permanently');
+            header ('Location: '.$this->config['posts_url_prefix'].$uid);
+            exit;
 
         } elseif (!empty($pages[array_shift(explode('.',$uri))])
             and $pages[array_shift(explode('.',$uri))]['pagination'] === true
