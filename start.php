@@ -28,7 +28,7 @@ $config =  array(
         'css'              => '', // appended to <head>
         'javascript'       => '', // appended to <body>
         'enable_disqus'    => false, // set to true on any page or post to dispaly comments from Disqus.com
-        'disqus_shortname' => '', // your disqus.com shortname. Required for comments.
+        'disqus_shortname' => 'michaelflanagan', // your disqus.com shortname. Required for comments.
     )
 );
 

@@ -40,7 +40,7 @@ $pages = array(
 
     // Default settings for the view-post page. These can be overwritten in the JSON of an individual post.
     '_post' => array(
-        'enable_disqus'  => false,
+        'enable_disqus'  => true,
     ),
 
     // Required for pagination. Routes trafic from /page/<num> to page/home.php.
