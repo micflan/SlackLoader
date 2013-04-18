@@ -78,7 +78,7 @@ class SlackLoader
      * @return array('data','tmpl'); or false
      **/
     public function getArticle ($uid, $tmpl = false) {
-        $uid = str_replace($this->config['posts_url_prefix'], '', $uid);
+        $uid = str_replace(str_replace('/', '.', $this->config['posts_url_prefix']), '', $uid);
 
         if (file_exists(DIR . $this->config['posts_dir'] . $uid . '.json')) {
 
