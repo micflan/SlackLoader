@@ -111,7 +111,7 @@ class SlackLoader
                 }
             }
 
-            return array('data' => $data, 'tmpl' => $tmpl);
+            return array('data' => array_merge($this->pages['_post'], $data), 'tmpl' => $tmpl);
         }
 
         return false;
@@ -127,6 +127,7 @@ class SlackLoader
         $uri = empty($this->uri) ? '_' : $this->uri;
 
         $pages = $this->cleanPages($pages);
+        $this->pages = $pages;
 
         if (!empty($pages[$uri])
             and $pages[$uri]['top_level'] !== false) {
@@ -157,7 +158,6 @@ class SlackLoader
             $this->page_data = $pages['404'];
         }
 
-        $this->pages = $pages;
         return $this;
     }
 
@@ -189,6 +189,8 @@ class SlackLoader
             'javascript'       => $this->tmpl['javascript'],
             'top_level'        => true,
             'pagination'       => false,
+            'enable_disqus'    => $this->tmpl['enable_disqus'],
+            'disqus_shortname' => $this->tmpl['disqus_shortname'],
         );
 
         $row = array_merge($complete, $page);

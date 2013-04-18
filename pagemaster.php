@@ -38,6 +38,11 @@ $pages = array(
         'page_title'     => 'Home',
     ),
 
+    // Default settings for the view-post page. These can be overwritten in the JSON of an individual post.
+    '_post' => array(
+        'enable_disqus'  => false,
+    ),
+
     // Required for pagination. Routes trafic from /page/<num> to page/home.php.
     'page' => array(
         '_page'          => 'pages/home.php',

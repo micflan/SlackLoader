@@ -27,6 +27,8 @@ $config =  array(
         'page_class'       => 'pageDefault', // applied to <body>
         'css'              => '', // appended to <head>
         'javascript'       => '', // appended to <body>
+        'enable_disqus'    => false, // set to true on any page or post to dispaly comments from Disqus.com
+        'disqus_shortname' => '', // your disqus.com shortname. Required for comments.
     )
 );
 
