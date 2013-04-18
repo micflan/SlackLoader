@@ -89,9 +89,8 @@ class SlackLoader
     }
 
     public function isOldArticle($uid) {
-        $prefix = str_replace('/', '.', $this->config['posts_url_prefix']);
-        $uid = str_replace($prefix, '', $uid);
-        return (file_exists(DIR . $this->config['posts_dir'] . $uid . '.json'));
+        return (!empty($this->config['posts_url_prefix'])
+            and file_exists(DIR . $this->config['posts_dir'] . $uid . '.json'));
     }
 
     /**
@@ -157,12 +156,10 @@ class SlackLoader
         $pages = $this->cleanPages($pages);
         $this->pages = $pages;
 
-        if (!empty($pages[$uri])
-            and $pages[$uri]['top_level'] !== false) {
-
-            // Page
-            $this->tmpl = array_merge($this->tmpl, $pages[$uri]);
-            $this->page_data = $pages[$uri];
+        if ($this->isOldArticle($uri)) {
+            header ('HTTP/1.1 301 Moved Permanently');
+            header ('Location: '.$this->config['posts_url_prefix'].$uri);
+            exit;
 
         } elseif ($this->isArticle($uri)) {
 
@@ -170,11 +167,6 @@ class SlackLoader
             $this->tmpl = array_merge($this->tmpl, $pages['_post']);
             $post = $this->getArticle($uri, true);
             $this->page_data = $post['data'];
-
-        } elseif ($this->isArticle($uri)) {
-            header ('HTTP/1.1 301 Moved Permanently');
-            header ('Location: '.$this->config['posts_url_prefix'].$uid);
-            exit;
 
         } elseif (!empty($pages[array_shift(explode('.',$uri))])
             and $pages[array_shift(explode('.',$uri))]['pagination'] === true
@@ -184,6 +176,13 @@ class SlackLoader
             $this->tmpl = array_merge($this->tmpl, $pages[array_shift(explode('.',$uri))]);
             $this->tmpl['root_level'] = array_shift(explode('.',$uri));
             $this->page_data = $pages[array_shift(explode('.',$uri))];
+
+        } elseif (!empty($pages[$uri])
+            and $pages[$uri]['top_level'] !== false) {
+
+            // Page
+            $this->tmpl = array_merge($this->tmpl, $pages[$uri]);
+            $this->page_data = $pages[$uri];
 
         } else {
 
