@@ -2,7 +2,7 @@
 <article class="post-<?=$data['uid'];?> post status-publish" id="post-<?=$data['uid'];?>">
 
     <?php if ($data['nav_page'] === 'home'): ?>
-        <h2><a href="/<?=$data['uid'];?>"><?=$data['title'];?></a></h2>
+        <h2><a href="<?=$data['post_link'];?>"><?=$data['title'];?></a></h2>
     <?php else: ?>
         <h2><?=$data['title'];?></h2>
     <?php endif; ?>
