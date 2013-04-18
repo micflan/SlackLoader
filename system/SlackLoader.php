@@ -70,19 +70,13 @@ class SlackLoader
         return $uri;
     }
 
-    /**
-     * getArticle
-     * retrieves json post file matching $uid
-     * and returns 'tmpl' and 'data' arrays ready for use in template
-     *
-     * @return array('data','tmpl'); or false
-     **/
-    public function getArticle ($uid, $tmpl = false) {
-
+    public function isArticle($uid) {
         $prefix = str_replace('/', '.', $this->config['posts_url_prefix']);
 
         if (!empty($prefix)
+            and $tmpl['_page']
             and substr( $uid, 0, strlen($prefix)) !== $prefix) {
+            die(DIR . $this->config['posts_dir'] . $uid . '.json');
             if (file_exists(DIR . $this->config['posts_dir'] . $uid . '.json')) {
                 header ('HTTP/1.1 301 Moved Permanently');
                 header ('Location: '.$this->config['posts_url_prefix'].$uid);
@@ -94,6 +88,25 @@ class SlackLoader
         $uid = str_replace($prefix, '', $uid);
 
         if (file_exists(DIR . $this->config['posts_dir'] . $uid . '.json')) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * getArticle
+     * retrieves json post file matching $uid
+     * and returns 'tmpl' and 'data' arrays ready for use in template
+     *
+     * @return array('data','tmpl'); or false
+     **/
+    public function getArticle ($uid, $tmpl = false) {
+
+
+        if ($this->isArticle($uid)) {
+            $prefix = str_replace('/', '.', $this->config['posts_url_prefix']);
+            $uid = str_replace($prefix, '', $uid);
 
             // Get data from JSON file
             $json = file_get_contents(DIR . $this->config['posts_dir'] . $uid . '.json');
@@ -151,9 +164,10 @@ class SlackLoader
             $this->tmpl = array_merge($this->tmpl, $pages[$uri]);
             $this->page_data = $pages[$uri];
 
-        } elseif ($post = $this->getArticle($uri, true)) {
+        } elseif ($this->isArticle($uri)) {
 
             // Blog post
+            $post = $this->getArticle($uri, true);
             $this->page_data = $post['data'];
 
         } elseif (!empty($pages[array_shift(explode('.',$uri))])
