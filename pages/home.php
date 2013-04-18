@@ -14,7 +14,7 @@ if ($per_page = $slack->config('posts_per_page')) {
     $last_page = (int)ceil($post_count/$per_page);
     $uri = $slack->uri;
 
-    if (strpos($uri, str_replace('/', '.', $slack->config('posts_url_prefix')) . 'page.', 0) === 0) {
+    if (strpos($uri, 'page.', 0) === 0) {
         $pagenum = (int)array_pop(explode('.', $uri));
     } else {
         $pagenum = $last_page;
@@ -36,19 +36,19 @@ if (empty($posts)) {
         if (1 === $pagenum) {
             echo '<li class="previous disabled"><a href="/">&laquo;</a></li>';
         } else {
-            echo '<li class="previous"><a href="/'.$slack->config('posts_url_prefix').'page/'.($pagenum-1).'">&laquo;</a></li>';
+            echo '<li class="previous"><a href="/page/'.($pagenum-1).'">&laquo;</a></li>';
         }
 
         $i = 1;
         while ($i <= $last_page) {
-            echo '<li'.($i === $pagenum ? ' class="active"' : '').'><a href="/'.$slack->config('posts_url_prefix').'page/'.$i.'">'.$i.'</a></li>';
+            echo '<li'.($i === $pagenum ? ' class="active"' : '').'><a href="/page/'.$i.'">'.$i.'</a></li>';
             $i++;
         }
 
         if ($last_page === $pagenum) {
             echo '<li class="next disabled"><a href="/">&raquo;</a></li>';
         } else {
-            echo '<li class="next"><a href="/'.$slack->config('posts_url_prefix').'page/'.($pagenum+1).'">&raquo;</a></li>';
+            echo '<li class="next"><a href="/page/'.($pagenum+1).'">&raquo;</a></li>';
         }
     ?>
 </ul>
