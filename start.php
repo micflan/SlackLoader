@@ -41,7 +41,7 @@ $config =  array(
 
 
 define('DIR', dirname(__FILE__) . '/');
-require_once(DIR . 'system/vendor/autoload.php');
+// require_once(DIR . 'system/vendor/autoload.php');
 require_once(DIR . 'system/SlackLoader.php');
 $slack = new SlackLoader($config);
 
