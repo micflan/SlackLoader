@@ -58,6 +58,7 @@ if (empty($posts)) {
 foreach($posts AS $row) {
     if ($post = $slack->getArticle($row->uid)) {
         $data = $post['data'];
+        $data['nav_page'] = 'home';
         include(DIR . $tmpl['_post_template']);
     }
 }
