@@ -83,6 +83,11 @@ class SlackLoader
 
         if (!empty($prefix)
             and substr( $uid, 0, strlen($prefix)) !== $prefix) {
+            if (file_exists(DIR . $this->config['posts_dir'] . $uid . '.json')) {
+                header ('HTTP/1.1 301 Moved Permanently');
+                header ('Location: '.$this->config['posts_url_prefix'].$uid);
+                exit;
+            }
             return false;
         }
 
@@ -108,15 +113,15 @@ class SlackLoader
                 $this->tmpl['css']        .= !empty($data['css']) ? $data['css'] : '';
 
                 // Check for custom template files
-                if (file_exists($this->config['posts_dir'] . $data['uid'] . '.php')) {
+                if (file_exists(DIR . $this->config['posts_dir'] . $data['uid'] . '.php')) {
                     $this->tmpl['_page'] = $this->config['posts_dir'] . $data['uid'] . '.php';
                 } else {
                     $this->tmpl['_page'] = $this->tmpl['_post_template'];
                 }
-                if (file_exists($this->config['posts_dir'] . $data['uid'] . '_header.php')) {
+                if (file_exists(DIR . $this->config['posts_dir'] . $data['uid'] . '_header.php')) {
                     $this->tmpl['_page_header'] = $this->config['posts_dir'] . $data['uid'] . '_header.php';
                 }
-                if (file_exists($this->config['posts_dir'] . $data['uid'] . '_footer.php')) {
+                if (file_exists(DIR . $this->config['posts_dir'] . $data['uid'] . '_footer.php')) {
                     $this->tmpl['_page_footer'] = $this->config['posts_dir'] . $data['uid'] . '_footer.php';
                 }
             }
