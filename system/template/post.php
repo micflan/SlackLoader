@@ -28,7 +28,7 @@
 <div id="comments">
 
     <?php
-    if ($data['disqus_shortname'] and $data['enable_disqus']) { ?>
+    if ($data['disqus_shortname'] and $data['nav_page'] !== 'home' and $data['enable_disqus']) { ?>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
