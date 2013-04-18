@@ -113,7 +113,7 @@ class SlackLoader
             $data = array_merge($this->pages['_post'], $cleanPage, json_decode($json, true));
 
             $data['category_text'] = implode(', ', $data['categories']);
-            $data['post_link'] = $this->config['posts_url_prefix'] . $uid;
+            $data['post_link'] = '/'.$this->config['posts_url_prefix'] . $uid;
 
             if ($tmpl === true) {
                 // Set template variables
