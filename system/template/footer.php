@@ -6,7 +6,33 @@
         <small>&copy; <?=date('Y');?> Michael Flanagan.</small>
     </footer>
 
+    <?php if ($data['jquery'] === true) { ?>
+        <script src="/vendor/jquery-2.0.0.min.js"></script>
+    <?php } ?>
+
+    <?php foreach ($data['include_js'] as $row) { ?>
+        <script src="<?=$row;?>"></script>
+    <?php } ?>
+
     <script>
+
+    (function($) {
+      var atTop = true;
+        $(window).scroll(function(){
+            // get the height of #wrap
+            var h = $('body').height();
+            var y = $(window).scrollTop();
+            if( y > 209 && atTop == true){
+                $('#stickyTop').slideDown('slow');
+                console.log('top');
+                atTop = false;
+            } else if ( y < 209) {
+                $('#stickyTop').slideUp('fast');
+                atTop = true;
+            }
+        });
+      })(jQuery);
+
         <?=$data['javascript'];?>
     </script>
 

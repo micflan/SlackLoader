@@ -26,6 +26,10 @@
 
 <body id="<?=$data['page_id'];?>" class="<?=$data['page_class'];?>">
 
+    <div id="stickyTop">
+        <h1>The infrequent blogging of <a href="/">Michael Flanagan</a></h1>
+    </div>
+
     <div id="header-wrap">
 
         <div class="heroWrap">

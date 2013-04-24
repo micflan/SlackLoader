@@ -121,6 +121,7 @@ class SlackLoader
                 $this->tmpl['page_class']  = 'pagePost' . (!empty($data['page_class']) ? ' ' . $data['page_class'] : '');
                 $this->tmpl['page_id']     = 'page-' . $data['uid'];
                 $this->tmpl['nav_page']    = 'post';
+                $this->tmpl['jquery']      = !empty($data['jquery']) ? $data['jquery'] : $this->tmpl['jquery'];
                 $this->tmpl['javascript'] .= !empty($data['javascript']) ? $data['javascript'] : '';
                 $this->tmpl['css']        .= !empty($data['css']) ? $data['css'] : '';
 
@@ -220,14 +221,18 @@ class SlackLoader
             'site_author'      => $this->tmpl['site_author'],
             'page_class'       => $this->tmpl['page_class'],
             'css'              => $this->tmpl['css'],
+            'jquery'           => $this->tmpl['jquery'],
             'javascript'       => $this->tmpl['javascript'],
             'top_level'        => true,
             'pagination'       => false,
+            'include_js'       => array(),
+            'include_css'      => array(),
             'enable_disqus'    => $this->tmpl['enable_disqus'],
             'disqus_shortname' => $this->tmpl['disqus_shortname'],
         );
 
-        $row = array_merge($complete, $page);
+        if (is_array($page))
+            $row = array_merge($complete, $page);
 
         if (empty($row['_page']))       $row['_page']      = 'pages/' . $uid . '.php';
         if (!isset($row['page_title'])) $row['page_title'] = ucfirst(str_replace('.', ' ', $uid));

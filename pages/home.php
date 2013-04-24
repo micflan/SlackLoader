@@ -55,10 +55,24 @@ if (empty($posts)) {
 
 <?php
 // Show Posts
-foreach($posts AS $row) {
+$i = count($posts)-1;
+foreach($posts AS $key => $row) {
     if ($post = $slack->getArticle($row->uid)) {
         $data = $post['data'];
+        $data['postnum'] = (string)((((int)$pagenum-1)*(int)$slack->config('posts_per_page')) + (int)$i+1);
         $data['nav_page'] = 'home';
+        if ($i === count($posts)-1) {
+            // die("$(document).ready(function() { $('#post-" . $post['data']['uid'] . "').addClass('active'); });");
+            $toppost = $post['data'];
+        }
         include(DIR . $tmpl['_post_template']);
+
+        $i--;
     }
 }
+
+if ($pagenum === $last_page) {
+    $data['javascript'] .= "$(document).ready(function() { $('#post-" . $toppost['uid'] . "').addClass('active'); });";
+}
+$data['jquery'] = true;
+$data['include_js'][] = '/vendor/jquery.scrollto.js';

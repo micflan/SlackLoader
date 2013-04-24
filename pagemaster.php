@@ -19,6 +19,7 @@
         'nav_page'         => '<array-key>', // e.g. for applying active class to navigation item.
         'page_id'          => 'page<ArrayKey>', // applied to <body>
         'page_class'       => 'pageDefault', // applied to <body>
+        'jquery'           => false, // include jquery if true
         'css'              => '', // appended to <head>
         'javascript'       => '', // appended to <body>
         'pagination'       => true, // Required for pagination. Routes trafic from /page/<num> to page/home.php.

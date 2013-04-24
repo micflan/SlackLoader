@@ -6,19 +6,16 @@
  *
 */
 
-   $post['uid']           = "podcasts-april2013";
-   $post['content']       = '<p>Podcasts I\'ve been listening to recently. Links are direct to the feeds.</p><ul><li><h3>Talk</h3><ul><li><a href="http://feeds.wnyc.org/radiolab">Radiolab</a> – very enjoyable show from New York public radio. Each episode investigates a different topic, often science related.</li><li><a href="http://downloads.bbc.co.uk/podcasts/fivelive/kermode/rss.xml">Kermode & Mayo Film Reviews</a> – weekly film news and review podcast from Mark Kermode and Simon Mayo\'s BBC 5Live radio show.</li><li><a href="http://feeds.wnyc.org/onthemedia">On The Media</a> – looking at different aspects of the media.</li></ul></li><li><h3>Tech</h3><ul><li><a href="http://feeds.feedburner.com/devhell-podcast">/dev/hell</a> – web development (with a leaning towards PHP) talking and ranting from Chris \'Grumpy Programmer\' Hartjes and Ed \'Funkatron\' Finkler.</li><li><a href="http://phptownhall.com/itunes.rss">PHP Town Hall</a> – php related talk with Phil Sturgeon and guests.</li><li><a href="http://feeds.feedburner.com/the_talk_show">The Talk Show</a> – the Daring Fireball podcast.</li></ul></li><li><h3>Tunes</h3><ul><li><a href="http://feeds.feedburner.com/kenmc">Stereo Mixtape</a> – music compiled by Ken McGuire</li><li><a href="http://feeds.feedburner.com/nialler9podcast">Nialler9</a> – music compiled by Nialler9</li></ul></li></ul>';
-   $post['date']          = "April 19, 2013 19:25";
-   $post['title']         = "Podcasts";
+   $post['uid']           = "four-tet-twitter-remix-playlist";
+   $post['content']       = '<p>Four Tet tweeted the tracks he\'d put on a 2nd remixes CD <a href="https://twitter.com/fourtet">over on Twitter</a>.</p><blockquote class="twitter-tweet"><p>people asking if there\'s going to be a 2nd remixes comp... I can\'t see it happening I\'m afraid...</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327152972121387008">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>I\'ll give you the tracklist and you can burn your own copy though.</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153049523068928">April 24, 2013</a></blockquote><p>These are the tracks:</p><blockquote class="twitter-tweet"><p>1. Thom Yorke - Atoms for peace (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153280394334210">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>2. The xx - VCR (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153332475027457">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>3. Caribou - Melody day (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153416428195841">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>4. Neneh Cherry + The Thing - Dream baby dream (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153557423923200">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>5. Roger O\'Donnell - Truth in you (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153670837919744">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>6. RocketNumberNine - Matthew and Toby (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153783220084738">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>7. Eluvium - The motion makes me last (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327153889495371776">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>8. Born Ruffians - I need a life (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327154005077803014">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>9. Bob Holroyd - African drug (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327154134404968448">April 24, 2013</a></blockquote><blockquote class="twitter-tweet"><p>10. Nathan Fake - You are here (Four Tet remix)</p>&mdash; Four Tet (@FourTet) <a href="https://twitter.com/FourTet/status/327154211064270848">April 24, 2013</a></blockquote><p>And here\'s a YouTube playlist of it all I put together:</p><iframe width="853" height="480" src="http://www.youtube.com/embed/TdyiZrVXa2M?list=PLZsMeHwq0hwOJj6oyUzx3uv8Wj6LLEKTP" frameborder="0" allowfullscreen></iframe>';
+   $post['date']          = "April 24, 2013 22:08";
+   $post['title']         = "Four Tet Twitter re-mix palylist";
    $post['article_css']   = "";
    $post['template_file'] = false;
    $post['author']        = "Michael Flanagan";
    $post['categories']    = array(
-      "Music",
-      "Technology",
-      "Podcasts"
+      "Music"
    );
-
 
 
 /*
