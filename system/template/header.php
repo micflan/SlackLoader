@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:500,600,800" type="text/css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v=1">
     <link rel="alternate" type="application/rss+xml" title="<?=$data['page_title'];?> Feed" href="/feed/" />
 
 </head>
