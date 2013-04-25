@@ -26,10 +26,10 @@ $config =  array(
         'page_id'          => 'pageHome', // applied to <body>
         'page_class'       => 'pageDefault', // applied to <body>
         'jquery'           => true,
-        'include_js'       => array(),
+        'include_js'       => array('/vendor/jquery.scrollto.js'),
         'include_css'      => array(),
         'css'              => '', // appended to <head>
-        'javascript'       => '', // appended to <body>
+        'javascript'       => '$("body").scrollTo("#content", {offsetTop: 90, duration: 0});', // appended to <body>
         'enable_disqus'    => false, // set to true on any page or post to dispaly comments from Disqus.com
         'disqus_shortname' => 'michaelflanagan', // your disqus.com shortname. Required for comments.
     )

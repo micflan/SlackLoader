@@ -74,5 +74,3 @@ foreach($posts AS $key => $row) {
 if ($pagenum === $last_page) {
     $data['javascript'] .= "$(document).ready(function() { $('#post-" . $toppost['uid'] . "').addClass('active'); });";
 }
-$data['jquery'] = true;
-$data['include_js'][] = '/vendor/jquery.scrollto.js';

@@ -27,7 +27,15 @@
 <body id="<?=$data['page_id'];?>" class="<?=$data['page_class'];?>">
 
     <div id="stickyTop">
-        <h1>The infrequent blogging of <a href="/">Michael Flanagan</a></h1>
+        <div id="stickyInner">
+            <div class="left"><a href="/"><span class="title">Michael Flanagan</span> &#8226; Blog.</a></div>
+            <div class="right">
+                <a href="http://twitter.com/micflan">Twitter</a> &#8226; 
+                <a href="http://www.last.fm/user/goodshape">Last.fm</a> &#8226; 
+                <a href="http://github.com/micflan">GitHub</a> &#8226; 
+                <a href="http://michael.flanagan.ie">About</a>
+            </div>
+        </div>
     </div>
 
     <div id="header-wrap">
@@ -35,7 +43,12 @@
         <div class="heroWrap">
             <h1>The infrequent blogging of <a href="/">Michael Flanagan</a></h1>
             <p>web developer. day dreamer. intp.</p>
-            <p><a href="http://micflan.com">Blog</a> &#8226; <a href="http://twitter.com/micflan">Twitter</a> &#8226; <a href="http://github.com/micflan">GitHub</a></p>
+            <p>
+                <a href="http://micflan.com">Blog</a> &#8226; 
+                <a href="http://twitter.com/micflan">Twitter</a> &#8226; 
+                <a href="http://www.last.fm/user/goodshape">Last.fm</a> &#8226; 
+                <a href="http://github.com/micflan">GitHub</a>
+            </p>
             <p><a href="http://michael.flanagan.ie/">About / Contact</a></p>
         </div>
 

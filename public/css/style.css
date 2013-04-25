@@ -222,22 +222,17 @@ a:active { position: relative; top: 1px; text-decoration: none; }
 }
 
 #header-wrap h1,
-#stickyTop h1 {
+#stickyTop .title {
 line-height: 1.4;
 font-size: 18px;
 font-weight: normal;
 }
 
 #header-wrap h1 a,
-#stickyTop h1 a,
-#header-wrap h1 a:link,
-#stickyTop h1 a:link,
-#header-wrap h1 a:visited,
-#stickyTop h1 a:visited,
-#header-wrap h1 a:active,
-#stickyTop h1 a:active,
-#header-wrap h1 a:hover,
-#stickyTop h1 a:hover {
+#header-wrap .title:link,
+#header-wrap .title:visited,
+#header-wrap .title:active,
+#header-wrap .title:hover {
 display: block;
 font-size: 2em;
 color: inherit;
@@ -289,20 +284,47 @@ h2.pagetitle {
     background: #e3e3e3;
     text-align: center;
     box-shadow: 0 -5px 15px #222;
-    padding: 10px 0;
-    display: none;
+    height: 42px;
+    border-bottom: 1px solid silver;
 }
 
-#stickyTop h1 a,
-#stickyTop h1 a:link,
-#stickyTop h1 a:visited,
-#stickyTop h1 a:active,
-#stickyTop h1 a:hover {
-    display: inline;
-    font-size: inherit;
-    font-weight: bolder;
+#stickyInner {
+    max-width: 850px;
+    margin: auto;
 }
 
+#stickyTop .title {
+    font-size: larger;
+}
+
+#stickyTop a.active {
+    border-bottom: 1px dotted blue;
+}
+
+#stickyTop .right,
+#stickyTop .left {
+    line-height: 42px;
+}
+
+#stickyTop .right {
+    float: right;
+    text-align: right;
+    margin-right: 5px;
+}
+#stickyTop .left {
+    float: left;
+    text-align: left;
+    margin-left: 5px;
+}
+
+#stickyTop .left a,
+#stickyTop .left a:link,
+#stickyTop .left a:visited,
+#stickyTop .left a:active,
+#stickyTop .left a:hover {
+    border: 0;
+    color: inherit;
+}
 
 #content {
     background: #e3e3e3;
@@ -427,7 +449,29 @@ margin-bottom: 0;
 
 }
 
+@media all and (max-width: 850px) {
+    article.active {
+        box-shadow: none;
+    }
+}
+
 @media all and (max-width: 545px) {
+
+
+#stickyTop {
+    height: 74px;
+}
+
+#stickyTop .left,
+#stickyTop .right {
+    text-align: center;
+    float: none;
+}
+
+#stickyTop .right {
+    line-height: 25px;
+}
+
 #categories-list {
 width: auto;
 float: none;

@@ -23,17 +23,20 @@
             var h = $('body').height();
             var y = $(window).scrollTop();
             if( y > 209 && atTop == true){
-                $('#stickyTop').slideDown('slow');
+                $('#stickyTop').slideDown();
                 console.log('top');
                 atTop = false;
             } else if ( y < 209) {
-                $('#stickyTop').slideUp('fast');
+                $('#stickyTop').slideUp();
                 atTop = true;
             }
         });
+
       })(jQuery);
 
-        <?=$data['javascript'];?>
+        $(document).ready(function() {
+            <?=$data['javascript'];?>
+        });
     </script>
 
     <script>

@@ -225,8 +225,8 @@ class SlackLoader
             'javascript'       => $this->tmpl['javascript'],
             'top_level'        => true,
             'pagination'       => false,
-            'include_js'       => array(),
-            'include_css'      => array(),
+            'include_js'       => $this->tmpl['include_js'],
+            'include_css'      => $this->tmpl['include_css'],
             'enable_disqus'    => $this->tmpl['enable_disqus'],
             'disqus_shortname' => $this->tmpl['disqus_shortname'],
         );
