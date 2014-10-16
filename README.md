@@ -12,14 +12,12 @@ I will build some sort of simple editor for those JSON files though. In the mean
 
 ## Updates
 
+### 16/October/2014
+
+- Better file structure.
+- Added Gulp
+- Added package.json for NPM dependancies
+
 ### 16/April/2013
 
 - Hello world.
-
-
-## TODO:
-
-- Add editor for json files
-- Unit tests for SlackLoader.php (I know, I know, should have written tests first...)
-
-- Categories for blog posts. Maybe? Do I need these so much?
