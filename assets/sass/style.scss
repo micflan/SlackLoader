@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Exo+2:600,400|Open+Sans:300,600,400);
+
+@import "_variables.scss";
+@import "bootstrap-sass-3.2.0/assets/stylesheets/bootstrap/bootstrap.scss";
+
+
+body {
+    padding-top: 50px;
+}
+
+.top-row {
+    padding: 60px 15px 0px;
+    text-align: center;
+
+    h1, h2 {
+        font-family: "Exo 2", $font-family-sans-serif;
+    }
+
+    h1 {
+        font-weight: 600;
+    }
+}
+
+.center-text {
+    text-align: center;
+}
+
+.large-divider {
+    margin: 80px 0;
+}
+
+.feature-button {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.feature-button:hover {
+    background: #ededed;
+    color: $link-color;
+}
